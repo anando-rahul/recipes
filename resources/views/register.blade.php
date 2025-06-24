@@ -24,7 +24,7 @@
                 </button>
             </div>
             <div class="text-center text-[#121212]">
-                Sudah memiliki akun? <a href="" class="text-[#EFAC25]">Masuk</a></a>
+                Sudah memiliki akun? <a href="{{ route('login') }}" class="text-[#EFAC25]">Masuk</a></a>
             </div>
         </form>
     </div>

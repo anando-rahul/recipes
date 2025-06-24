@@ -22,8 +22,8 @@
     @yield('include-css')
 
     {{-- Styles --}}
-    {{-- @vite('resources/css/app.css') --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-WjNvXiUv.css') }}">
+    @vite('resources/css/app.css')
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-WjNvXiUv.css') }}"> --}}
 
     @yield('css')
 </head>

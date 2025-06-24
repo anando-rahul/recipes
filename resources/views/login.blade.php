@@ -4,7 +4,7 @@
     <div class="pt-[100px] px-[50px]">
         <div class="text-xl text-center text-[#FECD4C]"><b>Masuk</b></div>
 
-        <form action="" method="POST" class="mt-14 space-y-4">
+        <form action="{{ route('home') }}" method="GET" class="mt-14 space-y-4">
             @csrf
             <div class="relative">
                 <label for="email">Email</label>

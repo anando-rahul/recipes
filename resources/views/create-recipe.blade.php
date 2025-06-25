@@ -14,6 +14,15 @@
         rel="stylesheet">
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('assets/favicon.png') }}">
+    <link rel="preload" href="{{ asset('common/assets/image/post-recipe-thumbnail.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-2.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-3.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-4.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-5.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-2.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-3.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/create-recipe-upload-image.png') }}" as="image" type="image/png" />
     @yield('include-css')
 
     {{-- Styles --}}

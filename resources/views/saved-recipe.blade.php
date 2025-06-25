@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/saved-recipe-1.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/saved-recipe-2.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/saved-recipe-3.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('css')
     <style>
         .shadow-custom {

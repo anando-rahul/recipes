@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/verification-success.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('css')
     <style>
         /* Chrome, Safari, Edge, Opera */
@@ -18,40 +22,48 @@
 
 
 @section('content')
-    <div class="pt-[100px] px-[50px]">
-        <div class="text-xl text-center text-[#FECD4C]"><b>Verifikasi</b></div>
+    @if (@$_GET['state'] != 'verification-success')
+        <div class="pt-[100px] px-[50px]">
+            <div class="text-xl text-center text-[#FECD4C]"><b>Verifikasi</b></div>
+            <div class="mt-[75px] mb-32 flex gap-3.5">
+                @for ($i = 1; $i <= 4; $i++)
+                    <input
+                        class="w-[72px] h-[72px] rounded-[20px] bg-[#F3F3F3] border border-[#C6C6C6] text-center font-bold text-3xl"
+                        type="number" min="0" max="9" oninput="this.value = this.value.slice(0, 1)">
+                @endfor
+            </div>
+            <div class="text-center text-sm text-[#121212]">
+                Tidak mendapatkan kode verifikasi?
+            </div>
+            <div class="text-center">
+                <a href="#" class="text-[#EFAC25] text-sm" id="countdown-timer">Kirim ulang 01:59</a>
+            </div>
+            <div class="mt-8">
+                <form action="{{ route('verification') }}" method="GET">
+                    <input type="hidden" name="state" value="verification-success">
+                    <button type="submit"
+                        class="w-full h-11 bg-[#FECD4C] rounded-[20px] text-white px-4 py-2.5 rounded-2lg transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                        <b>Verifikasi</b>
+                    </button>
+                </form>
+            </div>
+        </div>
+    @endif
 
-        <div class="mt-[75px] mb-32 flex gap-3.5">
-            @for ($i = 1; $i <= 4; $i++)
-                <input
-                    class="w-[72px] h-[72px] rounded-[20px] bg-[#F3F3F3] border border-[#C6C6C6] text-center font-bold text-3xl"
-                    type="number" min="0" max="9" oninput="this.value = this.value.slice(0, 1)">
-            @endfor
+    @if (@$_GET['state'] == 'verification-success')
+        <div class="px-[50px] h-screen flex flex-col items-center justify-center gap-6">
+            <img src="{{ asset('common/assets/image/verification-success.png') }}" alt="" width="142px" height="auto">
+            <div class="text-2xl text-center text-[#535353]"><b>Verifikasi Berhasil</b></div>
+            <div class="h-[300px] w-full flex flex-col justify-end">
+                <form action="{{ route('login') }}" method="get">
+                    <button type="submit"
+                        class="w-full h-11 bg-[#FECD4C] rounded-[20px] text-white px-4 py-2.5 rounded-2lg transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                        <b>Lanjut</b>
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="text-center text-sm text-[#121212]">
-            Tidak mendapatkan kode verifikasi?
-        </div>
-        <div class="text-center">
-            <a href="#" class="text-[#EFAC25] text-sm" id="countdown-timer">Kirim ulang 01:59</a>
-        </div>
-        <div class="mt-8">
-            <button type="submit"
-                class="w-full h-11 bg-[#FECD4C] rounded-[20px] text-white px-4 py-2.5 rounded-2lg transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                <b>Verifikasi</b>
-            </button>
-        </div>
-    </div>
-
-    {{-- <div class="px-[50px] h-screen flex flex-col items-center justify-center gap-6">
-        <img src="{{ asset('common/assets/image/verification-success.png') }}" alt="" width="142px" height="auto">
-        <div class="text-2xl text-center text-[#535353]"><b>Verifikasi Berhasil</b></div>
-        <div class="h-[300px] w-full flex flex-col justify-end">
-            <button type="submit"
-                class="w-full h-11 bg-[#FECD4C] rounded-[20px] text-white px-4 py-2.5 rounded-2lg transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                <b>Lanjut</b>
-            </button>
-        </div>
-    </div> --}}
+    @endif
 @endsection
 
 @section('js')

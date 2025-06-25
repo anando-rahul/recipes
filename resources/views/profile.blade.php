@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-1.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('content')
     <div class="mt-[70px] mx-6">
         <div class="flex">

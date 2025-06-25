@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('include-css')
+    <link rel="preload" href="{{ asset('common/assets/image/boarding.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('content')
     <div class="pt-[80px] px-[50px]">
         <div class="flex flex-col justify-center items-center">

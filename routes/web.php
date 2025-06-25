@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('boarding');
+    return view('splash');
 });
 
 Route::middleware(['web'])->group(function () {

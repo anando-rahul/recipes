@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@section('include-css')
+<link rel="preload" href="{{ asset('common/assets/image/thumbnail-detail-recipe.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-info.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-avatar.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-2.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-3.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-4.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-5.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-6.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-7.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('css')
     <style>
         .shadow-custom {
@@ -13,12 +26,18 @@
 @endsection
 
 @section('content')
-    <div class="mt-14 mx-6 w-90 flex justify-between">
-        <a href="{{ route('home') }}" class="">
+    <div class="mt-14 mx-6 w-90 md:w-100 flex justify-between">
+        <a href="{{ route('home') }}"
+            class="transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
             <img src="{{ asset('common/assets/image/back-button.svg') }}" alt="" width="50px" height="50px">
         </a>
-        <div class="">
+        <div class="transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95"
+            id="love-button">
             <img src="{{ asset('common/assets/image/love-button.svg') }}" alt="" width="50px" height="50px">
+        </div>
+        <div class="hidden transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95" id="love-button-clicked">
+            <img src="{{ asset('common/assets/image/love-button-clicked.svg') }}" alt="" width="50px"
+                height="50px">
         </div>
     </div>
     <div class="mt-4 mb-10 flex justify-center">
@@ -32,8 +51,8 @@
                 <img src="{{ asset('common/assets/image/detail-recipe-info.png') }}" alt="" height="50px"
                     width="250px">
             </div>
-            <div class="flex w-full justify-end p-[20px]">
-                <a href="#" data-modal-toggle="favorite-modal" data-modal-target="favorite-modal">
+            <div class="flex w-full justify-end p-[20px] ">
+                <a href="#" class="transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95" data-modal-toggle="favorite-modal" data-modal-target="favorite-modal">
                     <img src="{{ asset('common/assets/image/favorite-button.svg') }}" alt="">
                 </a>
             </div>
@@ -64,12 +83,12 @@
                     nemo quasi, odio optio provident aspernatur nulla aperiam laudantium facilis!</p>
             </div>
             <div class="mt-6 flex gap-7 justify-center">
-                <div class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#A3A3A3] ">
+                <div class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#A3A3A3] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                     <a href="{{ route('discussion') }}" class="text-center text-xs text-white">
                         <b>Lihat Diskusi</b>
                     </a>
                 </div>
-                <div class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#FECD4C] ">
+                <div class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#FECD4C] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                     <a href="{{ route('cooking-step') }}" class="text-center text-xs text-white">
                         <b>Mulai Masak</b>
                     </a>
@@ -97,4 +116,23 @@
 
 @section('include-js')
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+@endsection
+
+@section('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loveButton = document.getElementById("love-button");
+            const loveButtonClicked = document.getElementById("love-button-clicked");
+
+            loveButton.addEventListener("click", function() {
+                loveButton.classList.add("hidden");
+                loveButtonClicked.classList.remove("hidden");
+            });
+
+            loveButtonClicked.addEventListener("click", function() {
+                loveButtonClicked.classList.add("hidden");
+                loveButton.classList.remove("hidden");
+            });
+        });
+    </script>
 @endsection

@@ -1,5 +1,10 @@
 @extends('layouts.main')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/chef-juna.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/sate-ayam-2.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('content')
     <div class="mt-[70px] mx-6">
         <a href="{{ route('my-recipe') }}" class="absolute transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">

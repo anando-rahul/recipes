@@ -10,6 +10,9 @@
 
 @section('include-css')
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-1.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-2.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-3.png') }}" as="image" type="image/png" />
 @endsection
 
 @section('content')

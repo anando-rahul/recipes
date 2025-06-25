@@ -2,6 +2,18 @@
 
 @section('include-css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-1.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/search.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-0.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-1.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-2.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-3.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-4.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/menu-5.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-juna.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-arnold.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-marinka.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-renata.png') }}" as="image" type="image/png" />
 @endsection
 
 @section('css')
@@ -64,14 +76,16 @@
             </div>
             <div class="swiper swiper-chef mt-2.5 min-h-[80px]">
                 <div class="swiper-wrapper">
-                    @for ($i = 0; $i < 6; $i++)
-                        <a href="{{ route('chef-profile') }}" class="swiper-slide !w-[121px] !h-[46px] bg-[#EDEDED] rounded-xl shadow-custom">
+                    @php
+                        $chefs = ['juna', 'arnold', 'renata', 'marinka'];
+                    @endphp
+                    @for ($i = 0; $i < 4; $i++)
+                        <a href="{{ route('chef-profile') }}" class="swiper-slide !w-[121px] !h-[46px] bg-[#EDEDED] rounded-xl shadow-custom transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                             <div class="h-full flex justify-center items-center gap-3.5 px-[12px]">
                                 <div class="">
-                                    <img src="{{ asset('common/assets/image/chef-juna.png') }}" alt=""
-                                        width="30px" height="30px">
+                                    <img src="{{ asset('common/assets/image/chef-'). $chefs[$i].'.png' }}" alt=""width="30px" height="30px">
                                 </div>
-                                <div class="text-xs">Chef Juna</div>
+                                <div class="text-xs capitalize">Chef {{ @$chefs[$i] }}</div>
                             </div>
                         </a>
                     @endfor

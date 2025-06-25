@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/step-2.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/step-3.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/step-4.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/step-5.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/step-8.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('css')
     <style>
         .shadow-custom {

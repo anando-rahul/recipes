@@ -1,5 +1,16 @@
 @extends('layouts.main')
 
+@section('include-css')
+    <link rel="preload" href="{{ asset('common/assets/image/chef-juna.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-arnold.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-avatar.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-marinka.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-a.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-b.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/chef-c.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/sate-ayam-2.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('content')
     <div class="mt-[70px] mx-6">
         <div class="flex justify-between">

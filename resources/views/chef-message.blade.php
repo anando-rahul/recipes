@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('include-css')
+  <link rel="preload" href="{{ asset('common/assets/image/chef-juna.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/chat.png') }}" as="image" type="image/png" />
+@endsection
+
 @section('css')
     <style>
         .shadow-custom {

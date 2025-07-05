@@ -1,33 +1,33 @@
 @extends('layouts.main')
 
 @section('include-css')
-  <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-1.png') }}" as="image" type="image/png" />
+  <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-3.png') }}" as="image" type="image/png" />
 @endsection
 
 @section('content')
-    <div class="mt-[70px] mx-6">
+    <div class="mt-10 mx-6">
         <div class="flex">
             <div class="w-full h-full flex justify-center items-center">
                 <div class="flex flex-col items-center gap-2.5">
-                    <img src="{{ asset('common/assets/image/avatar-discussion-1.png') }}" alt="" width="100px" height="100px">
+                    <img src="{{ asset('common/assets/image/avatar-discussion-3.png') }}" alt="" width="100px" height="100px">
                     <div class="text-center">
-                        <div class="font-semibold text-md">Halo, Arif</div>
+                        <div class="font-bold text-md">Halo, Arif</div>
                         <div class="font-regular text-xs">Member</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mt-4 flex justify-center items-center gap-6">
+        <div class="mt-5 flex justify-center items-center gap-6">
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Resep</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Resep</div>
                 <div class="text-bold text-[#EFAC25]"><b>17</b></div>
             </div>
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Pengikut</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Pengikut</div>
                 <div class="text-bold text-[#EFAC25]"><b>105</b></div>
             </div>
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Mengikuti</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Mengikuti</div>
                 <div class="text-bold text-[#EFAC25]"><b>12</b></div>
             </div>
         </div>

@@ -30,12 +30,12 @@
 @endsection
 
 @section('content')
-    <div class="flex mt-4 mx-4 gap-5">
-        <img src="{{ asset('common/assets/image/avatar-discussion-1.png') }}" alt="" width="50px" height="50px">
-        <div class="">
+    <div class="flex items-center mt-5 mx-4 gap-5">
+        <img src="{{ asset('common/assets/image/avatar-discussion-3.png') }}" alt="" width="50px" height="50px">
+        <a href="{{ route('profile') }}" class="">
             <div class="text-[#535353] text-sm">Halo, Arif</div>
             <div class="text-[#262626] text-2xl"><b>Temukan Resep</b></div>
-        </div>
+        </a>
     </div>
     <div class="mt-5 mx-2 p-0">
         <img src="{{ asset('common/assets/image/search.png') }}" alt="">

@@ -182,8 +182,6 @@
     <div
         class="hidden xl:block fixed w-full -z-0 container inset-0 max-w-md mx-auto h-full min-h-screen border-x border-white/5">
     </div>
-
-    <script src="{{ asset('build/assets/app-T1DpEqax.js') }}"></script>
 </body>
 
 </html>

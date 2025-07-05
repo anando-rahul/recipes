@@ -12,12 +12,17 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-1.png') }}" as="image" type="image/png" />
     <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-2.png') }}" as="image" type="image/png" />
-    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-3.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/avatar-discussion-3.png') }}" as="image"
+        type="image/png" />
 @endsection
 
 @section('content')
-    @include('inc.top', ['link' => route('detail-recipe'), 'title' => 'Sate Ayam', 'sub_title' => 'Diskusi Komunitas'])
-    <div class="mt-5 mx-6">
+    @include('inc.top', [
+        'link' => route('detail-recipe'),
+        'title' => 'Sate Ayam',
+        'sub_title' => 'Diskusi Komunitas',
+    ])
+    <div class="mt-5 mb-10 mx-6">
         <section>
             <div class="font-semibold text-sm">Rating</div>
             <div class="mt-2.5 flex justify-between">
@@ -66,7 +71,7 @@
         </section>
         <section class="mt-5">
             <div class="font-semibold text-sm mb-5">Ulasan Terkini</div>
-            <div class="mb-8 space-y-4">
+            <div id="review-container" class="mb-8 space-y-4 overflow-y-scroll max-h-[26.5rem]">
                 <div class="h-full w-full bg-[#EDEDED] rounded-[10px] shadow-custom">
                     <div class="p-5">
                         <div class="flex justify-between">
@@ -109,29 +114,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="h-full w-full bg-[#EDEDED] rounded-[10px] shadow-custom">
-                    <div class="p-5">
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2.5">
-                                <img src="{{ asset('common/assets/image/avatar-discussion-1.png') }}" alt=""
-                                    width="20px" height="20px">
-                                <div class="font-semibold text-[#262626] text-xs">Arif</div>
-                            </div>
-                            <div class="bg-white w-[36px] h-[18px] rounded-[10px]">
-                                <div class="h-full w-full flex justify-center items-center">
-                                    <div class="font-semibold text-[0.625rem] text-[#000000] mx-0.5">5</div>
-                                    <img src="{{ asset('common/assets/image/star.svg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-2.5 text-[#535353] text-[0.75rem] w-full">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s.
-                        </p>
-                    </div>
-                </div>
             </div>
-            <button type="button" class="w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3"
+            <button type="button" class="fixed bottom-8 w-[21.5rem] h-12 bg-[#FECD4C] text-white rounded-[1.25rem] py-3"
                 data-modal-target="default-modal" data-modal-toggle="default-modal">
                 <b>Tambah Ulasan</b>
             </button>
@@ -146,7 +130,7 @@
         <div class="fixed bottom-0 full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-t-4xl shadow-sm">
-                <div class="py-8 px-6 space-y-4">
+                <div class="p-8 space-y-4">
                     <div class="text-sm font-semibold text-[#262626]">
                         Tambah Ulasan
                     </div>
@@ -170,7 +154,8 @@
                         <img src="{{ asset('common/assets/image/star-rating.svg') }}" alt="star"
                             class="w-6 h-6 cursor-pointer" data-index="5" />
                     </div>
-                    <button data-modal-hide="default-modal" type="button" class="w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3">
+                    <button id="add-review" data-modal-hide="default-modal" type="button"
+                        class="w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3">
                         <b>Tambah Ulasan</b>
                     </button>
                 </div>
@@ -186,8 +171,8 @@
 @section('js')
     <script>
         const stars = document.querySelectorAll('#star-rating img');
-        const defaultSrc = '{{ asset('common/assets/image/star-rating.svg') }}'; // abu-abu
-        const selectedSrc = '{{ asset('common/assets/image/star-rating-selected.svg') }}'; // kuning
+        const defaultSrc = "{{ asset('common/assets/image/star-rating.svg') }}"; // abu-abu
+        const selectedSrc = "{{ asset('common/assets/image/star-rating-selected.svg') }}"; // kuning
 
         stars.forEach((star, index) => {
             star.addEventListener('click', () => {
@@ -196,6 +181,42 @@
                 stars.forEach((s, i) => {
                     s.src = i < rating ? selectedSrc : defaultSrc;
                 });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addButton = document.getElementById('add-review');
+            const reviewContainer = document.getElementById('review-container');
+
+            addButton.addEventListener('click', function() {
+                const newReview = document.createElement('div');
+                newReview.className = 'h-full w-full bg-[#EDEDED] rounded-[10px] shadow-custom z-10';
+                newReview.innerHTML = `
+              <div class="h-full w-full bg-[#EDEDED] rounded-[10px] shadow-custom">
+                    <div class="p-5">
+                        <div class="flex justify-between">
+                            <div class="flex items-center gap-2.5">
+                                <img src="{{ asset('common/assets/image/avatar-discussion-1.png') }}" alt=""
+                                    width="20px" height="20px">
+                                <div class="font-semibold text-[#262626] text-xs">Arif</div>
+                            </div>
+                            <div class="bg-white w-[36px] h-[18px] rounded-[10px]">
+                                <div class="h-full w-full flex justify-center items-center">
+                                    <div class="font-semibold text-[0.625rem] text-[#000000] mx-0.5">5</div>
+                                    <img src="{{ asset('common/assets/image/star.svg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-2.5 text-[#535353] text-[0.75rem] w-full">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                            the industry's standard dummy text ever since the 1500s.
+                        </p>
+                    </div>
+                </div>
+        `;
+
+                reviewContainer.appendChild(newReview);
             });
         });
     </script>

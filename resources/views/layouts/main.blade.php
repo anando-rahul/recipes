@@ -43,9 +43,8 @@
     </div>
 
     {{-- Navigation Phone --}}
-    <nav class="fixed bottom-0 max-w-md left-1/2 -translate-x-1/2 z-50 w-full">
-        <div class="w-full bg-[#EFAC25] text-text-6 px-6 py-5 rounded-t-[1.25rem] flex flex-row items-center justify-between"
-            style="">
+    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full">
+        <div class="w-full bg-[#EFAC25] text-text-6 px-6 py-8 rounded-t-[1.25rem] flex flex-row items-center justify-between" style="">
             <a href="{{ route('home') }}" class="flex flex-col w-1/5 items-center">
                 <img src="{{ asset('common/assets/image/home.svg') }}" alt="">
             </a>
@@ -70,7 +69,6 @@
 
     @yield('include-js')
     @yield('js')
-    <script src="{{ asset('build/assets/app-T1DpEqax.js') }}"></script>
 </body>
 
 </html>

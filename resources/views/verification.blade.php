@@ -25,10 +25,10 @@
     @if (@$_GET['state'] != 'verification-success')
         <div class="pt-[100px] px-[50px]">
             <div class="text-xl text-center text-[#FECD4C]"><b>Verifikasi</b></div>
-            <div class="mt-[75px] mb-32 flex gap-3.5">
+            <div class="mt-[75px] mb-32 flex justify-center items-center gap-3.5">
                 @for ($i = 1; $i <= 4; $i++)
                     <input
-                        class="w-[72px] h-[72px] rounded-[20px] bg-[#F3F3F3] border border-[#C6C6C6] text-center font-bold text-3xl"
+                        class="w-[65px] h-[65px] rounded-[20px] bg-[#F3F3F3] border border-[#C6C6C6] text-center font-bold text-3xl"
                         type="number" min="0" max="9" oninput="this.value = this.value.slice(0, 1)">
                 @endfor
             </div>

@@ -44,7 +44,6 @@
     {{-- <script src="{{ asset('nobbleui') }}/assets/js/jquery-3.6.0.min.js"></script> --}}
     @yield('include-js')
     @yield('js')
-    <script src="{{ asset('build/assets/app-T1DpEqax.js') }}"></script>
 </body>
 
 </html>

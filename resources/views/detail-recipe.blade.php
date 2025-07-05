@@ -6,11 +6,10 @@
             box-shadow: 0px -4px 50px rgba(0, 0, 0, 0.25);
         }
     </style>
-      <link rel="preload" href="{{ asset('common/assets/image/thumbnail-detail-recipe.png') }}" as="image"
+    <link rel="preload" href="{{ asset('common/assets/image/thumbnail-detail-recipe.png') }}" as="image"
         type="image/png" />
     <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-info.png') }}" as="image" type="image/png" />
-    <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-avatar.png') }}" as="image"
-        type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/detail-recipe-avatar.png') }}" as="image" type="image/png" />
     <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
     <link rel="preload" href="{{ asset('common/assets/image/ingredient-2.png') }}" as="image" type="image/png" />
     <link rel="preload" href="{{ asset('common/assets/image/ingredient-3.png') }}" as="image" type="image/png" />
@@ -25,7 +24,7 @@
 @endsection
 
 @section('content')
-    <div class="mt-14 mx-6 w-90 md:w-100 flex justify-between">
+    <div class="mt-5 mx-6 w-90 md:w-100 flex justify-between">
         <a href="{{ route('home') }}"
             class="transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
             <img src="{{ asset('common/assets/image/back-button.svg') }}" alt="" width="50px" height="50px">
@@ -36,7 +35,7 @@
         </div>
         <div class="hidden transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95"
             id="love-button-clicked">
-            <img src="{{ asset('common/assets/image/love-button-clicked.svg') }}" alt="" width="50px"
+            <img src="{{ asset('common/assets/image/love-button-clicked-2.svg') }}" alt="" width="50px"
                 height="50px">
         </div>
     </div>
@@ -47,18 +46,18 @@
 
     <div class="h-full w-full rounded-t-[20px] bg-[#F4F4F4] shadow-custom">
         <div class="relative h-full pb-6">
-            <div class="absolute left-[85px] -top-[30px]">
+            <div class="absolute w-full flex justify-center -top-[30px]">
                 <img src="{{ asset('common/assets/image/detail-recipe-info.png') }}" alt="" height="50px"
                     width="250px">
             </div>
-            <div class="flex w-full justify-end p-[20px] ">
+            <div class="absolute flex w-full justify-end p-[20px] !z-50">
                 <a href="#"
                     class="transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95"
                     data-modal-toggle="favorite-modal" data-modal-target="favorite-modal">
                     <img src="{{ asset('common/assets/image/favorite-button.svg') }}" alt="">
                 </a>
             </div>
-            <div class="mx-6">
+            <div class="pt-12 mx-6">
                 <div class="text-[#262626] text-[24px]"><b>Sate Ayam</b></div>
                 <div class="mt-1 flex items-center gap-1">
                     <div class="">

@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <div class="mt-[70px] mx-6">
+    <div class="mt-5 mx-6">
         <a href="{{ route('my-recipe') }}" class="absolute transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
             <img src="{{ asset('common/assets/image/back-button.svg') }}" alt="" width="50px" height="50px">
         </a>
@@ -18,25 +18,30 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 flex justify-center items-center gap-6">
+        <div class="mt-5 flex justify-center items-center gap-6">
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Resep</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Resep</div>
                 <div class="text-bold text-[#EFAC25]"><b>17</b></div>
             </div>
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Pengikut</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Pengikut</div>
                 <div class="text-bold text-[#EFAC25]"><b>105</b></div>
             </div>
             <div class="text-center">
-                <div class="font-medium text-[#A3A3A3] text-xs">Mengikuti</div>
+                <div class="font-reguler text-[#A3A3A3] text-xs">Mengikuti</div>
                 <div class="text-bold text-[#EFAC25]"><b>12</b></div>
             </div>
         </div>
-        <div class="mt-4 flex justify-center gap-2.5">
-            <div
+        <div class="mt-5 flex justify-center gap-2.5">
+            <div id="follow"
                 class="max-w-[65px] h-[30px] bg-[#EFAC25] rounded-[30px] text-white flex items-center justify-center p-1.5 px-5 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                 <img src="{{ asset('common/assets/image/people.svg') }}" alt="" width="12px" height="12px">
                 <span class="mx-1 font-regular text-[0.625rem]">Ikuti</span>
+            </div>
+            <div id="followed"
+                class="hidden max-w-[80px] h-[30px] bg-[#EFAC25] rounded-[30px] text-white items-center justify-center p-1.5 px-5 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                <img src="{{ asset('common/assets/image/followed.svg') }}" alt="" style="width: 14px; height: 14px;">
+                <span class="ms-[2px] font-regular text-[0.625rem]">Mengikuti</span>
             </div>
             <a href="{{ route('chef-message') }}"
                 class="max-w-[65px] h-[30px] bg-[#1981DE] rounded-[30px] text-white flex items-center justify-center p-1.5 px-5 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
@@ -153,4 +158,27 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const follow = document.getElementById("follow");
+            const followed = document.getElementById("followed");
+
+            follow.addEventListener("click", function() {
+                follow.classList.add("hidden");
+                follow.classList.remove("flex");
+                followed.classList.remove("hidden");
+                followed.classList.add("flex");
+            });
+
+            followed.addEventListener("click", function() {
+                followed.classList.add("hidden");
+                followed.classList.remove("flex");
+                follow.classList.remove("hidden");
+                follow.classList.add("flex");
+            });
+        });
+    </script>
 @endsection

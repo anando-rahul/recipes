@@ -17,12 +17,11 @@
     </style>
 @endsection
 
-
 @section('content')
     @include('inc.top', ['link' => route('detail-recipe'), 'title' => 'Step Memasak', 'sub_title' => 'Sate Ayam by Chef Renata'])
-    <div class="mt-5 w-[285px] mx-auto">
+    <div class="mt-5 w-[300px] mx-auto">
         <div class="font-semibold text-sm">Langkah-langkah:</div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[27px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -42,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[18px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -60,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[18px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -78,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[16px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -96,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[16px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -114,16 +113,16 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+        <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
             <div class="absolute top-[16px] -left-[18px]">
                 <div
                     class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
                     6
                 </div>
             </div>
-            <div class="flex justify-center items-center py-3 gap-16">
+            <div class="flex justify-center items-center py-3">
                 <div class="mr-3">
-                    <p class="text-[10px] text-[#262626] max-w-[160px]">
+                    <p class="text-[10px] text-[#262626] min-w-[160px]">
                         Sate siap dihidangkan.
                     </p>
                 </div>
@@ -133,7 +132,7 @@
             </div>
         </div>
         {{-- <div class="relative my-5">
-            <a href="#" class="block p-3 text-white text-center w-[265px] h-full bg-[#FECD4C] rounded-[20px]">
+            <a href="#" class="block p-3 text-white text-center w-[18.5rem] h-full bg-[#FECD4C] rounded-[20px]">
                 <b>
                     Selesai
                 </b>

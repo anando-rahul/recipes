@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('include-css')
-  <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
-  <link rel="preload" href="{{ asset('common/assets/image/step-2.png') }}" as="image" type="image/png" />
-  <link rel="preload" href="{{ asset('common/assets/image/step-3.png') }}" as="image" type="image/png" />
-  <link rel="preload" href="{{ asset('common/assets/image/step-4.png') }}" as="image" type="image/png" />
-  <link rel="preload" href="{{ asset('common/assets/image/step-5.png') }}" as="image" type="image/png" />
-  <link rel="preload" href="{{ asset('common/assets/image/step-8.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/ingredient-1.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-2.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-3.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-4.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-5.png') }}" as="image" type="image/png" />
+    <link rel="preload" href="{{ asset('common/assets/image/step-8.png') }}" as="image" type="image/png" />
 @endsection
 
 @section('css')
@@ -18,7 +18,11 @@
 @endsection
 
 @section('content')
-    @include('inc.top', ['link' => route('detail-recipe'), 'title' => 'Step Memasak', 'sub_title' => 'Sate Ayam by Chef Renata'])
+    @include('inc.top', [
+        'link' => url()->previous(),
+        'title' => 'Step Memasak',
+        'sub_title' => "{$_GET['menu']} by Chef Renata",
+    ])
     <div class="mt-5 w-[300px] mx-auto">
         <div class="font-semibold text-sm">Langkah-langkah:</div>
         <div class="relative w-[18.5rem] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">

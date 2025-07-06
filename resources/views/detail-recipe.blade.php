@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="mt-4 mb-10 flex justify-center">
-        <img src="{{ asset('common/assets/image/thumbnail-detail-recipe.png') }}" alt="" width="200px"
+        <img src="{{ asset('common') }}/assets/image/menu-{{ @$_GET['index'] }}.png" alt="" width="200px"
             height="200px">
     </div>
 
@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="pt-12 mx-6">
-                <div class="text-[#262626] text-[24px]"><b>Sate Ayam</b></div>
+                <div class="text-[#262626] text-[24px]"><b>{{ @$_GET['menu'] ? $_GET['menu'] : 'Nama Resep' }}</b></div>
                 <div class="mt-1 flex items-center gap-1">
                     <div class="">
                         <img src="{{ asset('common/assets/image/detail-recipe-avatar.png') }}" alt=""
@@ -87,13 +87,13 @@
             <div class="mt-6 flex gap-7 justify-center">
                 <div
                     class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#A3A3A3] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                    <a href="{{ route('discussion') }}" class="text-center text-xs text-white">
+                    <a href="{{ route('discussion', ['menu' => @$_GET['menu']]) }}" class="text-center text-xs text-white">
                         <b>Lihat Diskusi</b>
                     </a>
                 </div>
                 <div
                     class="flex justify-center items-center w-[150px] h-[40px] rounded-[1.25rem] bg-[#FECD4C] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                    <a href="{{ route('cooking-step') }}" class="text-center text-xs text-white">
+                    <a href="{{ route('cooking-step', ['menu' =>@$_GET['menu']]) }}" class="text-center text-xs text-white">
                         <b>Mulai Masak</b>
                     </a>
                 </div>

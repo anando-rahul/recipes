@@ -1,20 +1,23 @@
 @extends('layouts.main')
 
 @section('include-css')
-  <link rel="preload" href="{{ asset('common/assets/image/chef-juna.png') }}" as="image" type="image/png" />
   <link rel="preload" href="{{ asset('common/assets/image/sate-ayam-2.png') }}" as="image" type="image/png" />
 @endsection
 
 @section('content')
     <div class="mt-5 mx-6">
-        <a href="{{ route('my-recipe') }}" class="absolute transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+        <a href="{{ url()->previous() }}" class="absolute transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
             <img src="{{ asset('common/assets/image/back-button.svg') }}" alt="" width="50px" height="50px">
         </a>
         <div class="flex">
             <div class="w-full h-full flex justify-center items-center">
                 <div class="flex flex-col items-center gap-2.5">
-                    <img src="{{ asset('common/assets/image/chef-juna.png') }}" alt="">
-                    <div class="font-semibold text-md">Chef Juna</div>
+                    @if (@$_GET['chef'])
+                        <img src="{{ asset('common/assets/image/chef-'). @$_GET['chef'].'.png' }}" alt="" width="136px" height="136px">
+                    @else
+                        <img src="{{ asset('common/assets/image/chef-juna.png') }}" alt="" width="136px" height="136px">
+                    @endif
+                    <div class="font-semibold text-md">Chef <span style="text-transform: capitalize;">{{ @$_GET['chef'] }}</span></div>
                 </div>
             </div>
         </div>
@@ -43,7 +46,7 @@
                 <img src="{{ asset('common/assets/image/followed.svg') }}" alt="" style="width: 14px; height: 14px;">
                 <span class="ms-[2px] font-regular text-[0.625rem]">Mengikuti</span>
             </div>
-            <a href="{{ route('chef-message') }}"
+            <a href="{{ route('chef-message', ['chef' => @$_GET['chef']]) }}"
                 class="max-w-[65px] h-[30px] bg-[#1981DE] rounded-[30px] text-white flex items-center justify-center p-1.5 px-5 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                 <img src="{{ asset('common/assets/image/comment-icon.svg') }}" alt="" width="12px" height="12px">
                 <span class="mx-1 font-regular text-[0.625rem]">Pesan</span>
@@ -54,9 +57,13 @@
                 <div class="py-5 px-6">
                     <div class="flex justify-between items-center">
                         <div class="flex gap-3 items-center">
-                            <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png') }}" alt=""
-                                width="20px" height="20px">
-                            <div class="font-semibold text-sm text-[#262626]">Chef Juna</div>
+                            @if (@$_GET['chef'])
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-'). @$_GET['chef'].'.png' }}" alt=""
+                                    width="20px" height="20px">
+                            @else
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png')}}" alt="" width="20px" height="20px">
+                            @endif
+                            <div class="font-semibold text-sm text-[#262626]">Chef <span style="text-transform: capitalize;">{{ @$_GET['chef'] ? $_GET['chef'] : 'Juna' }}</div>
                         </div>
                         <div class="text-[#535353] text-[0.625rem]">31m yang lalu</div>
                     </div>
@@ -103,9 +110,13 @@
                 <div class="py-5 px-6">
                     <div class="flex justify-between items-center">
                         <div class="flex gap-3 items-center">
-                            <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png') }}" alt=""
-                                width="20px" height="20px">
-                            <div class="font-semibold text-sm text-[#262626]">Chef Juna</div>
+                            @if (@$_GET['chef'])
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-'). @$_GET['chef'].'.png' }}" alt=""
+                                    width="20px" height="20px">
+                            @else
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png')}}" alt="" width="20px" height="20px">
+                            @endif
+                            <div class="font-semibold text-sm text-[#262626]">Chef <span style="text-transform: capitalize;">{{ @$_GET['chef'] ? $_GET['chef'] : 'Juna' }}</div>
                         </div>
                         <div class="text-[#535353] text-[0.625rem]">31m yang lalu</div>
                     </div>
@@ -132,9 +143,13 @@
                 <div class="py-5 px-6">
                     <div class="flex justify-between items-center">
                         <div class="flex gap-3 items-center">
-                            <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png') }}" alt=""
-                                width="20px" height="20px">
-                            <div class="font-semibold text-sm text-[#262626]">Chef Juna</div>
+                            @if (@$_GET['chef'])
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-'). @$_GET['chef'].'.png' }}" alt=""
+                                    width="20px" height="20px">
+                            @else
+                                <img class="rounded-full" src="{{ asset('common/assets/image/chef-juna.png')}}" alt="" width="20px" height="20px">
+                            @endif
+                            <div class="font-semibold text-sm text-[#262626]">Chef <span style="text-transform: capitalize;">{{ @$_GET['chef'] ? $_GET['chef'] : 'Juna' }}</div>
                         </div>
                         <div class="text-[#535353] text-[0.625rem]">31m yang lalu</div>
                     </div>

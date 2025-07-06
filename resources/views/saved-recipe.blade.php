@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="mt-[70px] mx-6">
+    <div class="mt-5 mx-6">
         <div class="font-semibold text-md text-[#262626]">Resep Tersimpan</div>
         <div class="mt-6 space-y-2.5" id="recipe-list">
             <div class="relative w-full h-[130px] bg-[#EDEDED] rounded-[10px] shadow-custom saved-recipe-card">

@@ -43,7 +43,7 @@
 <body class="relative font-source-poppins min-h-screen">
     <div
         class="relative min-h-screen overflow-x-hidden container w-full max-w-md mx-auto h-full bg-[#939393] container-color">
-        <main class="relative z-10">
+        <main class="relative z-10 mt-5">
             <div class="relative w-full h-screen">
                 <div class="absolute bottom-0 w-full bg-white rounded-t-4xl shadow-sm">
                     <div class="pt-8 px-6 space-y-4">
@@ -78,7 +78,7 @@
                             </div>
                             <div class="mt-6 font-semibold text-sm text-[#262626]">Langkah-langkah</div>
                             <div class="w-full flex flex-col items-center justify-center">
-                                <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+                                <div class="relative w-[280px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
                                     <div class="absolute top-[27px] -left-[18px]">
                                         <div
                                             class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+                                <div class="relative w-[280px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
                                     <div class="absolute top-[18px] -left-[18px]">
                                         <div
                                             class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -118,7 +118,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+                                <div class="relative w-[280px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
                                     <div class="absolute top-[18px] -left-[18px]">
                                         <div
                                             class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
@@ -139,29 +139,29 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="relative w-[265px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
+                                <div class="relative w-[280px] mt-5 h-auto bg-[#EDEDED] rounded-xl shadow-custom">
                                     <div class="absolute top-[18px] -left-[18px]">
                                         <div
                                             class="flex justify-center items-center w-[35px] h-[35px] bg-[#FECD4C] rounded-[10px] text-[#535353] font-medium text-xl shadow-custom">
                                             4
                                         </div>
                                     </div>
-                                    <div class="flex justify-between items-center py-3 pl-7 pr-5">
+                                    <div class="flex justify-center items-center py-3">
                                         <div class="mr-3">
-                                            <p class="text-[10px] text-[#A3A3A3] max-w-[160px] font-normal">
+                                            <p class="text-[10px] text-[#A3A3A3] min-w-[160px] font-normal">
                                                 Tambahkan deskripsi...
                                             </p>
                                         </div>
                                         <div class="">
                                             <img src="{{ asset('common/assets/image/create-recipe-upload-image.png') }}"
-                                                alt="" width="50px" height="50px">
+                                                alt="" width="40px" height="40px">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <div class="flex w-full justify-center">
-                            <div class="w-[65px] h-[24px] bg-[#EDEDED] rounded-[0.625rem] flex justify-center items-center text-[#535353] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                            <div class="w-[75px] h-[24px] bg-[#EDEDED] rounded-[0.625rem] flex justify-center items-center text-[#535353] transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                                 <img class="mr-[3px]" src="{{ asset('common/assets/image/plus.svg') }}" alt="">
                                 <span class="font-semibold text-[0.625rem]">Tambah</span>
                             </div>
@@ -170,7 +170,7 @@
                             <b>Post</b>
                         </button> --}}
                         <a href="{{ route('my-recipe') }}" class="block text-center w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3 mb-8 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                            <b>Post</b>
+                            <b>Post Resep</b>
                         </a>
                     </div>
                 </div>

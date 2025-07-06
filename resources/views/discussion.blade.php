@@ -18,8 +18,8 @@
 
 @section('content')
     @include('inc.top', [
-        'link' => route('detail-recipe'),
-        'title' => 'Sate Ayam',
+        'link' => url()->previous(),
+        'title' => @$_GET['menu'],
         'sub_title' => 'Diskusi Komunitas',
     ])
     <div class="mt-5 mb-10 mx-6">

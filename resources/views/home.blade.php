@@ -31,7 +31,9 @@
 
 @section('content')
     <div class="flex items-center mt-5 mx-4 gap-5">
-        <img src="{{ asset('common/assets/image/avatar-discussion-3.png') }}" alt="" width="50px" height="50px">
+        <a href="{{ route('profile') }}">
+            <img src="{{ asset('common/assets/image/avatar-discussion-3.png') }}" alt="" width="50px" height="50px">
+        </a>
         <a href="{{ route('profile') }}" class="">
             <div class="text-[#535353] text-sm">Halo, Arif</div>
             <div class="text-[#262626] text-2xl"><b>Temukan Resep</b></div>
@@ -51,7 +53,7 @@
                     @endphp
                     @for ($i = 0; $i < 6; $i++)
                         <div class="swiper-slide !w-[92px] !h-[125px] bg-[#EDEDED] rounded-xl shadow-custom  transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                            <a href="{{ route('detail-recipe') }}" class="h-full flex flex-col justify-center items-center gap-1.5">
+                            <a href="{{ route('detail-recipe', ['index' => $i, 'menu' => $menus[$i]]) }}" class="h-full flex flex-col justify-center items-center gap-1.5">
                                 <div>
                                     <img src="{{ asset('common') }}/assets/image/menu-{{ $i }}.png"
                                         alt="" width="52" height="52">
@@ -80,7 +82,7 @@
                         $chefs = ['juna', 'arnold', 'renata', 'marinka'];
                     @endphp
                     @for ($i = 0; $i < 4; $i++)
-                        <a href="{{ route('chef-profile') }}" class="swiper-slide !w-[121px] !h-[46px] bg-[#EDEDED] rounded-xl shadow-custom transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                        <a href="{{ route('chef-profile', ['chef' => $chefs[$i]]) }}" class="swiper-slide !w-[121px] !h-[46px] bg-[#EDEDED] rounded-xl shadow-custom transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                             <div class="h-full flex justify-center items-center gap-3.5 px-[12px]">
                                 <div class="">
                                     <img src="{{ asset('common/assets/image/chef-'). $chefs[$i].'.png' }}" alt=""width="30px" height="30px">
@@ -105,7 +107,7 @@
                     @endphp
                     @for ($i = 0; $i < 6; $i++)
                        <div class="swiper-slide !w-[92px] !h-[125px] bg-[#EDEDED] rounded-xl shadow-custom  transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                            <a href="{{ route('detail-recipe') }}" class="h-full flex flex-col justify-center items-center gap-1.5">
+                            <a href="{{ route('detail-recipe', ['index' => $i, 'menu' => $menus[$i]]) }}" class="h-full flex flex-col justify-center items-center gap-1.5">
                                 <div>
                                     <img src="{{ asset('common') }}/assets/image/menu-{{ $i }}.png"
                                         alt="" width="52" height="52">
@@ -135,7 +137,7 @@
                     @endphp
                     @for ($i = 0; $i < 6; $i++)
                         <div class="swiper-slide !w-[92px] !h-[125px] bg-[#EDEDED] rounded-xl shadow-custom  transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
-                            <a href="{{ route('detail-recipe') }}" class="h-full flex flex-col justify-center items-center gap-1.5">
+                            <a href="{{ route('detail-recipe', ['index' => $i, 'menu' => $menus[$i]]) }}" class="h-full flex flex-col justify-center items-center gap-1.5">
                                 <div>
                                     <img src="{{ asset('common') }}/assets/image/menu-{{ $i }}.png"
                                         alt="" width="52" height="52">

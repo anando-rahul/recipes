@@ -30,7 +30,7 @@
 
 <body class="relative min-h-screen">
     {{-- <div class="mb-32 relative min-h-screen overflow-x-hidden container w-full max-w-md mx-auto h-full bg-white container-color"> --}}
-    <div class="relative min-h-screen overflow-x-hidden container w-full max-w-md mx-auto h-full bg-white container-color">
+    <div class="relative min-h-screen overflow-x-hidden container w-full {{ request()->routeIs('chef-message') ? '' : 'max-w-md'  }} mx-auto h-full bg-white container-color">
         <main class="relative z-10">
             @yield('content')
         </main>

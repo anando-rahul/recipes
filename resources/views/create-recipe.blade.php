@@ -169,7 +169,7 @@
                         {{-- <button type="submit" class="w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3 mb-8 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                             <b>Post</b>
                         </button> --}}
-                        <a href="{{ route('my-recipe') }}" class="block text-center w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3 mb-8 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
+                        <a href="{{ route('post') }}" class="block text-center w-full h-full bg-[#FECD4C] text-white rounded-[1.25rem] py-3 mb-8 transform transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95">
                             <b>Post Resep</b>
                         </a>
                     </div>

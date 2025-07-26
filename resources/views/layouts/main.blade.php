@@ -49,7 +49,7 @@
                 <img src="{{ asset('common/assets/image/home.svg') }}" alt="">
             </a>
 
-            <a href="{{ route('my-recipe') }}" class="flex flex-col w-1/5 items-center">
+            <a href="{{ route('post') }}" class="flex flex-col w-1/5 items-center">
                 <img src="{{ asset('common/assets/image/post.svg') }}" alt="">
             </a>
 

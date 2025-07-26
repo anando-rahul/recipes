@@ -17,7 +17,7 @@ Route::middleware(['web'])->group(function () {
     Route::view('cooking-step', 'cooking-step', ['page_title' => 'Step Memasak'])->name('cooking-step');
     Route::view('discussion', 'discussion', ['page_title' => 'Diskusi Resep'])->name('discussion');
 
-    Route::view('my-recipe', 'my-recipe', ['page_title' => 'Postingan Resep'])->name('my-recipe');
+    Route::view('post', 'post', ['page_title' => 'Postingan Resep'])->name('post');
     Route::view('create-recipe', 'create-recipe', ['page_title' => 'Buat Resep'])->name('create-recipe');
     Route::view('saved-recipe', 'saved-recipe', ['page_title' => 'Resep Tersimpan'])->name('saved-recipe');
     Route::view('chef-profile', 'chef-profile', ['page_title' => 'Profile Chef'])->name('chef-profile');

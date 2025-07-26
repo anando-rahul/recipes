@@ -79,10 +79,9 @@
                 </div>
                 <div class="mt-6 text-[#262626] font-semibold text-sm">Deskripsi</div>
                 <p class="text-[#7c7c7c] font-xs w-full">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis
-                    neque voluptates quasi nostrum quo fuga
+                    neque
                     at. Facere aperiam facilis praesentium libero voluptate quod inventore veritatis eligendi vel
-                    consequuntur ullam neque, eos deserunt, minima quos. Dolore dolores ducimus, earum, aliquam quisquam
-                    nemo quasi, odio optio provident aspernatur nulla aperiam laudantium facilis!</p>
+                    consequuntur ullam neque, eos deserunt, minima quos.</p>
             </div>
             <div class="mt-6 flex gap-7 justify-center">
                 <div
